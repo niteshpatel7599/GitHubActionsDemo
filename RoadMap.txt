@@ -1,0 +1,86 @@
+Learning Java 
+	Basics of Core Java
+	Networking Basics
+	Databases - Mysql
+	Build Tool -Maven
+	Tomcat
+	JSP (Frontend) & SERVLET (Backend)
+	MVC Architecture
+	JDBC (Java database connectivity)
+	Spring
+		Spring core - 1. Dependenct injection, 2. IOC 3. Beans and Beans scope 4. Spring Configuration
+			-XML, Annotation, java code
+	Spring MVC
+		- Reuest Mapping
+		- Request Param
+		- Pathvariables
+	Spring Rest
+		- Json data binding
+		- Spring ret controller
+		- Retreive POJOS
+		- Using path variables for rest endpoints
+		- Exception hanndling
+		- Hibernate (ORM)
+			CURD Operation
+			Eager vs Lazzy
+			Hibernate Mapping
+		- Spring data JPA
+			Configuration
+			pagination
+			Sorting
+		Spring AOP
+		
+		
+		Train Reservation System
+			-JSP & SERVLET & JDBC
+			- Spring Core
+			-Spring MVC
+			- Spring rest
+			- Hibernate
+			-jpa
+			Spring security (Authorization and authentication)
+		TDD
+			First write function against t
+			JUNIT
+			MOCKITO
+		Spring Boot
+		Spring cloud
+		Spring Microservices
+		
+	
+	Let's Start With JSP and Servlet
+	
+		-Development Steps
+			-Create Ecllipse Dynamic project
+			-Add Dependencies
+			-Project Structire
+			-MySql Database setup
+			-Create Java bean
+			-Create Dao Layer
+			-Create Servlet
+			-Create JSP Page
+			
+	Project 
+		1. Simple calculator
+		2. TIC TAC TOE
+		3. Password Manager
+		4. File Organizer
+		5. Image editor
+		6. Chat Application
+		7. Web Scraper
+		8. Quiz game
+		9. Stock market simulator
+		10. Ecommerce Website
+		
+		1. Bank Management System
+		2. Build Notpad
+		3. Java quiz Application
+		4. Employee Managment system
+		5. Invoice processing system
+		6. Chatting Application
+		7. Group Chating application
+		8. Hotel Managment Sytem
+		9. Railyway registration system
+		10 Travel and tourism managment system
+		11. Full Stack Crud
+		12. 
