@@ -1,0 +1,52 @@
+<project name="Failed Jobs details Check" mainModule="Main" version="2.0" logLevel="debug">
+
+    <module name="Main">
+
+        <!-- Your existing setVariable tasks -->
+
+        <createWorkspace version="1.0" />
+
+        <callModule label="Call Actions" module="Actions" version="1.0" />
+
+        <deleteWorkspace version="1.0" disabled="false" />
+
+        <setVariable label="Set IsFinal" name="IsFInal" value="Y" version="2.0" onError="continue" />
+
+        <print version="1.0" disabled="false">
+            <![CDATA[${datecompare}]]>
+        </print>
+
+    </module>
+
+    <!-- Existing variable definitions -->
+
+    <module name="Actions">
+
+        <sql label="Connect to DB" resourceId="ACC-SQL" version="1.0" logLevel="verbose">
+            <query label="Retrieve Data" outputVariable="data" whenNoDataFound="error">
+                <statement>SELECT df.source_server_host, df.destination_server_host
+, djf.job_id, djf.proj_folder, djf.proj_name, djf.submit_time, djf.remarks
+FROM dpa_job_file_log df JOIN dpa_job djf ON df.job_id = djf.job_id WHERE djf.status = &apos;F&apos;</statement>
+            </query>
+        </sql>
+
+        <print version="1.0">
+            <![CDATA[${data}]]>
+        </print>
+
+        <writeExcel label="Convert to Excel" inputRowSetVariable="${data}" outputFile="${system.job.workspace}/file.xlsx" whenFileExists="overwrite" excelFormat="excel2007" includeHeadings="true" outputFileVariable="excelFile" version="2.0" logLevel="verbose" disabled="false">
+            <data trim="both" dateFormat="MM/dd/yyyy" timeFormat="HH:mm:ss" timestampFormat="MM/dd/yyyy HH:mm:ss.SSS" />
+            <headings backgroundColor="Gold" />
+            <footer>
+                <right>Page &amp;[Page] of &amp;[Pages]</right>
+            </footer>
+        </writeExcel>
+
+        <!-- Other actions as needed -->
+
+    </module>
+
+    <!-- Existing ErrorHandling module -->
+
+    <description>This job will refer the password expiry sheet and triggers email to EMFT DL if expiry is less than or equal to 30 days  </description>
+</project>
